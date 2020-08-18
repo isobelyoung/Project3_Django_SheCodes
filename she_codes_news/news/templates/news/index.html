@@ -1,21 +1,36 @@
+{% extends "base.html" %}    
+{% load static %}
+
+<!-- everything from h2 tag goes in content block in base template -->
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
+{% endblock %} # replaces block stylesheets in base.html
+
+{% block content %}
+
     <h2>Latest News</h2>
 
     <div id="latest-stories">
         {% if latest_stories %}
             {% for story in latest_stories %}
-                <p>{{ story.title }}</p>
+                {% include "./storyCard.html" with story=story position=forloop.counter %}
             {% endfor %}
         {% else %}
             <p>No stories are available.</p>
         {% endif %}
     </div>
 
+    <a href="{% url 'news:newStory' %}">Write New Story</a>
+
     <div id="all-stories">
         {% if latest_stories %}
             {% for story in all_stories %}
-                <p>{{ story.title }}</p>
+                {% include "./storyCard.html" with story=story %}
             {% endfor %}
         {% else %}
             <p>No stories are available.</p>
         {% endif %}
     </div>
+
+{% endblock %}

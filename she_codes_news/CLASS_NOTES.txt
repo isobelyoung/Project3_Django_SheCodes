@@ -1,0 +1,11 @@
+- Create VENV and activate, install Django
+- Tell site about new app in settings file (INSTALLED_APPS)
+- Migrate classes
+    - makemigrate - every addition to news/models.py
+    - migrate (python3 manage.py migrate)
+    - migrations come from MODELS, they are instructions applied to database
+- go to URLS file and tell it about view
+    - project view and app level view files
+- runserver from manage.py ('python3 manage.py runserver') <-- important command
+- when trying data, command 'python3 manage.py loaddata news' to populate database
+- {% %} is template language
