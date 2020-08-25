@@ -9,3 +9,8 @@
 - runserver from manage.py ('python3 manage.py runserver') <-- important command
 - when trying data, command 'python3 manage.py loaddata news' to populate database
 - {% %} is template language
+
+TO ADD EXTRA FIELD IN MODEL:
+    - add to model, view
+    - make migrations and migrate
+    - add to class so is displayed in right place

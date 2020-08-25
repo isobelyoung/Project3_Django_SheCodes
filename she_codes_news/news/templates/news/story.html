@@ -11,7 +11,17 @@
     <h2>{{ story.title }}</h2>
     <h4>{{ story.author }}</h4>
     <div id="story-content">
-        <img src="{% static '/news/images/placeholder-5.jpg' %}">
+        <!-- add conditional statement to use the defined story image, the placeholder image from database, or the default if no conditions matched -->
+        {% if story.img_url != default %}
+            <img src="{{  story.img_url  }}">
+        {% elif position < 5 %}
+            <img src="../static/news/images/placeholder-{{ position }}.jpg">
+        {% else %}
+            <img src="https://picsum.photos/600">
+        {% endif %}
+        
+        <!-- <img src="{{  story.img_url  }}"> -->
+        <!-- <img src="{% static '/news/images/placeholder-5.jpg' %}"> -->
         {{ story.content|linebreaks }}
     </div>
 </div>
