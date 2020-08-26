@@ -14,3 +14,15 @@ TO ADD EXTRA FIELD IN MODEL:
     - add to model, view
     - make migrations and migrate
     - add to class so is displayed in right place
+
+
+TUESDAY 25/08
+
+- go to home page without /news/
+"python3 manage.py startapp users" at manage.py level ---- NEW APP users
+
+- clear database: rm db.sqlite3
+- load: manage.py loaddata user.json
+- THEN create superuser: python3 manage.py createsuperuser
+
+EVERY TIME UPDATE A MODEL - eg. news story, make migrations - apply migrations
