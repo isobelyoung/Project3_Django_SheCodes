@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+form {
+    margin-left: 25%;
+    
+}
+
+nav {
+    border: 2px solid salmon;
+}
+
+img {
+    margin: 5% 0;
+    width: 100%;
+    background-attachment: fixed;
+}
+
+.header-img {
+    margin: 5% 0;
+    width: 100%;
+    background-attachment: fixed;
+    background-image: url('https://media1.tenor.com/images/dc659d7690308079c43f27c5f3a01c16/tenor.gif?itemid=14309357');
+    padding-top: 40%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+html {
+    /* background-image: url('https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2019%2F09%2Fgettyimages-143479959-2000.jpg'); */
+    background-position: center;
+}
+
+div {
+    display: flex;
+}
+
