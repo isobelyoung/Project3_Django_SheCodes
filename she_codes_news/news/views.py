@@ -9,14 +9,18 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         '''Return all news stories.'''
-        return NewsStory.objects.all().order_by('pub_date')
+        return NewsStory.objects.all().order_by('-pub_date').all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['latest_stories'] = NewsStory.objects.order_by('-pub_date').all()[:4] #  added order_by to sort stories by date
         context['all_stories'] = NewsStory.objects.all().order_by('-pub_date') #  added order_by to sort stories by date
+        # context['by_author'] = NewsStory.objects.all().filter('author', flat=True)
         return context
 
+    @property
+    def get_auth(self, id):
+        return NewsStory.objects.all().filter(author=id)
 
 class StoryView(generic.DetailView):
     model = NewsStory
@@ -33,3 +37,6 @@ class AddStoryView(generic.CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+    def success(request): 
+        return HttpResponse('successfully uploaded')

@@ -35,3 +35,19 @@ div {
     display: flex;
 }
 
+.grid-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.grid-item {
+    flex-grow: 1;
+    align-self: center;
+    width: 48%;
+    min-width: 400px;
+    border: 2px solid cornflowerblue;
+}
+

@@ -1,8 +1,8 @@
 <div class="story-card" id="story-card-{{ position }}">
     <a href="{% url 'news:story' story.id%}">
         <!-- add conditional statement to use the defined story image, the placeholder image from database, or the default if no conditions matched -->
-        {% if story.img_url != default %}
-            <img src="{{  story.img_url  }}">
+        {% if story.story_img != default %}
+            <img src="{{  story.story_img  }}">
         {% elif position < 5 %}
             <img src="../static/news/images/placeholder-{{ position }}.jpg">
         {% else %}

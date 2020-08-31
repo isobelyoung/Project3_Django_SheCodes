@@ -11,6 +11,8 @@ class NewsStory(models.Model):
     )
     pub_date = models.DateTimeField()
     content = models.TextField()
-    img_url = models.CharField(max_length=200, default='https://picsum.photos/600')
+    # img_url = models.CharField(max_length=200, default='https://picsum.photos/600')
+    story_img = models.ImageField(upload_to='images/', null=True, blank=True) # add default image!
+
 
 # add categories, authors
