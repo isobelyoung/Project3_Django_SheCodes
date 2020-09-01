@@ -5,6 +5,9 @@ from django.views import generic
 from .models import CustomUser
 from .forms import CustomUserCreationForm
 from django.views.generic.detail import DetailView
+from django.contrib import messages
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.forms import PasswordChangeForm
 
 class CreateAccountView(CreateView):
     form_class = CustomUserCreationForm
@@ -14,4 +17,4 @@ class CreateAccountView(CreateView):
 class AccountView(generic.DetailView):
     model = CustomUser
     template_name = 'users/Account.html'
-    
+

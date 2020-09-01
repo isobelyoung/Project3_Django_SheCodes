@@ -3,9 +3,9 @@
 {% block content %}
 
 <h2>Create Account</h2>
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Create Account</button>
+    <button type="submit" value="submit">Create Account</button>
 </form>
 {% endblock %}

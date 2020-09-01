@@ -26,3 +26,14 @@ TUESDAY 25/08
 - THEN create superuser: python3 manage.py createsuperuser
 
 EVERY TIME UPDATE A MODEL - eg. news story, make migrations - apply migrations
+
+
+IMAGE LOGIC
+        <!-- {% elif position < 5 %}
+            <img src="../static/news/images/placeholder-{{ position }}.jpg">
+        {% else %}
+            <img src="https://picsum.photos/600">
+        {% endif %} -->
+                
+        <!-- <img src="{{  story.img_url  }}"> -->
+        <!-- <img src="{% static '/news/images/placeholder-5.jpg' %}"> -->

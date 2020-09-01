@@ -1,8 +1,11 @@
 from django.views import generic
 from .models import NewsStory
 from django.urls import reverse_lazy
-from .forms import StoryForm
+# from .forms import StoryForm
 
+from django.http import HttpResponse 
+from django.shortcuts import render, redirect 
+from .forms import *
 
 class IndexView(generic.ListView):
     template_name = 'news/index.html'
@@ -38,5 +41,4 @@ class AddStoryView(generic.CreateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
-    def success(request): 
-        return HttpResponse('successfully uploaded')
+

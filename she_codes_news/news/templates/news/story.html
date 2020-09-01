@@ -3,7 +3,7 @@
 
 {% block stylesheets %}
 <link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
-{% endblock %} # replaces block stylesheets in base.html
+{% endblock %} 
 
 {% block content %}
 
@@ -12,18 +12,15 @@
     <h4>{{ story.author }}</h4>
     <div id="story-content">
         <!-- add conditional statement to use the defined story image, the placeholder image from database, or the default if no conditions matched -->
-        {% if story.story_img != default %}
-            <img src="{{  story.story_img  }}">
-        {% elif position < 5 %}
-            <img src="../static/news/images/placeholder-{{ position }}.jpg">
+        {% if story.story_img %}
+            <img src="../media/{{  story.story_img  }}">
         {% else %}
-            <img src="https://picsum.photos/600">
-        {% endif %}
-        
-        <!-- <img src="{{  story.img_url  }}"> -->
-        <!-- <img src="{% static '/news/images/placeholder-5.jpg' %}"> -->
+            <img src="../media/images/default_story.jpg"> 
+        {% endif %} 
+
         {{ story.content|linebreaks }}
     </div>
 </div>
 
 {% endblock %}
+
