@@ -7,6 +7,8 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect 
 from .forms import *
 
+from users.models import CustomUser
+
 class IndexView(generic.ListView):
     template_name = 'news/index.html'
 
@@ -42,3 +44,19 @@ class AddStoryView(generic.CreateView):
         return super().form_valid(form)
 
 
+class CategoryView(generic.ListView):
+    template_name="news/storiesByCategory.html"
+    model = NewsStory
+    context_object_name = "story"
+
+    def __init__(self):
+        self.category = NewsStory.category
+
+    def get_queryset(self):
+        return NewsStory.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['all_categories'] = NewsStory.objects.all().order_by('-pub_date')
+        # context['category_1'] = NewsStory.objects.all().filter('category')
+        return context

@@ -6,6 +6,7 @@
         <a href="/users/account/{{ request.user.id }}">My Profile: {{ request.user.username }}</a> 
         <!-- all templates have access to request object -->
         <a href="{% url 'news:newStory' %}">Write New Story</a>
+        <a href="/users/{{ request.user.id }}/change-account/">Edit Profile</a>
         <a href="{% url 'logout' %}">Logout</a>
         
     

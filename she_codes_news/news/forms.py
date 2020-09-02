@@ -2,11 +2,19 @@ from django import forms
 from django.forms import ModelForm
 from .models import *
 
+categories = ['cat_1','cat_2', 'cat_3']
 
 class StoryForm(ModelForm):
     class Meta:
         model = NewsStory
-        fields = ['title', 'pub_date', 'content', 'story_img']
+        fields = ['title', 'pub_date', 'content', 'story_img', 'category']
+        labels = {
+            'title': 'Review Heading',
+            'pub_date': 'Publication Date',
+            'content': 'Your Review',
+            'story_img': 'Upload a photo!',
+            'category': 'Restaurant/cafe name'
+        }
         widgets = {
             'pub_date': forms.DateInput(format=('%m/%d/%Y'),
             attrs={'class':'form-control', 'placeholder':'Select a date',

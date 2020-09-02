@@ -37,3 +37,34 @@ IMAGE LOGIC
                 
         <!-- <img src="{{  story.img_url  }}"> -->
         <!-- <img src="{% static '/news/images/placeholder-5.jpg' %}"> -->
+
+
+
+        <!-- 
+    {% with qs = story.objects.filter(title__icontains = "test") %}
+        {% include q for q in qs %}
+        {% endfor %}
+    {% endblock %} -->
+
+        <!-- <h2>{{  story.category  }}</h2>
+    <div>
+            {% for story in all_categories %}
+                {% if story.category == "New cafe" %}
+                    {% include "./storyCard.html" with story=story position=forloop.counter %}
+                {% endif %}
+            {% endfor %}
+        <p>No more stories for this category</p>
+    </div> -->
+
+
+    {% for story in all_categories %}
+    {% if story.category == "New cafe" %}
+        <h4>{{  story.category  }}</h4>
+        {% include "./storyCard.html" with story=story position=forloop.counter %}
+    {% elif story.category == "All cafes" }
+        <h4>{{  story.category  }}</h4>
+        {% include "./storyCard.html" with story=story position=forloop.counter %}
+    {% else %}
+        <p>Do you want to view all stories?</p>
+    {% endif %}
+{% endfor %}

@@ -1,0 +1,31 @@
+
+{% load static %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'news/styles.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="container">
+    <h2>All Art Submitted by You, {{ object.username }}!</h2>
+    {% if object %}
+        {% for story in object.stories.all %}
+        <div class="story-card" id="story-card-{{ position }}">
+            <a href="{% url 'news:story' story.id %}">
+                {% if story.story_img %}
+                    <img src="../media/{{  story.story_img  }}">
+                {% else %}
+                    <img src="../media/images/default_story.jpg"> 
+        {% endif %} 
+                <div class="story-card-text">
+                    <h3>{{ story.title }}</h3>
+                    <h4><a href="{% url 'users:author' story.author.id %}">{{ story.author }}</a></h4>
+                    <h4>{{ story.pub_date }}</h4>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>This author has not written any stories yet.</p>
+    {% endif %}
+</div>
+{% endblock %}
