@@ -2,7 +2,6 @@ from django import forms
 from django.forms import ModelForm
 from .models import *
 
-categories = ['cat_1','cat_2', 'cat_3']
 
 class StoryForm(ModelForm):
     class Meta:
