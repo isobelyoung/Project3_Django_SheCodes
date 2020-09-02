@@ -2,6 +2,12 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.db.models import Q
 
+art_categories = (
+    "Digital",
+    "Photography",
+    "Painting"
+)
+
 class NewsStory(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey(
@@ -13,6 +19,7 @@ class NewsStory(models.Model):
     content = models.TextField()
     story_img = models.ImageField(upload_to='images/', null=True, blank=True, default='/media/images/default_story.jpg') # add default image!
     category = models.CharField(max_length=200, default="All cafes")
+
 
     # objects = PostManager()
 

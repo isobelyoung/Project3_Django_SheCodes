@@ -2,6 +2,11 @@ from django import forms
 from django.forms import ModelForm
 from .models import *
 
+art_categories = (
+    "Digital",
+    "Photography",
+    "Painting"
+)
 
 class StoryForm(ModelForm):
     class Meta:

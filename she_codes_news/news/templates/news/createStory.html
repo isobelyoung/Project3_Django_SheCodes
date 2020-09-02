@@ -24,6 +24,10 @@
 
             {% csrf_token %}
             {{ form.as_p }}
+            <p>Please note for categories, enter exactly one of the following options:</p>
+            <p>     Digital</p>
+            <p>     Photography</p>
+            <p>     Painting</p>
             <button type="submit" value="submit">SUBMIT</button> 
             <!-- <input type="submit" value="submit"> -->
         </form>
