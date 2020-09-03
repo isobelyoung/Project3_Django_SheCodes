@@ -2,31 +2,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 @import url("//db.onlinewebfonts.com/c/537c29c4b78689a51f1c48cd802a503f?family=ITC+Grouch");
 
+html {
+    margin: 0;
+    color: #373737;
+}
+
 body {
-    background-color: rgb(240, 239, 239);
+    background-color: #f5f5f5;
+    margin: 0;
 }
 
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #000;
+    border-bottom: 2px solid #F9DFD6;
+    background-color: #F9DFD6;
+    margin: 0;
+    padding: 5px;
 }
-
-/* img {
-    /* filter: grayscale(100%); */
-/* } */ */
 
 h1 {
     font-family: "ITC Grouch", serif;
     text-decoration: none;
-    font-size: 4rem;
+    font-size: 3rem;
     margin: 0;
+    color: #373737;
 }
 
 h2 {
    font-family: "ITC Grouch", serif;
+   
 }
+
 
 h3 {
     font-size: 2rem;
@@ -34,23 +42,42 @@ h3 {
 }
 
 #header-text {
-    flex-basis: 80%;
+    flex-basis: 70%;
     display: flex;
 }
 
 nav {
-    flex-basis: 20%;
+    flex-basis: 30%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    font-family: 'Raleway', sans-serif;
 }
 
 a {
     margin: 2px;
     text-decoration: none;
-    color: #000;
+    color: #373737;
 }
 
-a, p {
+p {
     font-family: 'Raleway', sans-serif;
+}
+
+.my-body {
+    margin: 15px;
+    display: block;
+    align-self: center;
+}
+
+.my-button {
+    border: 2px solid #ffcfc8;
+    background-color: #ffcfc8; 
+    box-shadow: 5px 5px #FF6F61;
+    padding: 0.5em;
+    font-family: 'Raleway', Helvetica, sans-serif;
+    margin: 1em;
+    color: #FF6F61;
+    font-weight: 600;
+    text-transform: uppercase;
 }

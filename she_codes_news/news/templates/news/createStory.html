@@ -10,15 +10,15 @@
 
 {% block content %}
 
-<!-- <img src="https://media1.tenor.com/images/dc659d7690308079c43f27c5f3a01c16/tenor.gif?itemid=14309357"> -->
-
 <div class="header-img"></div>
 
 {% if request.user.is_authenticated %}
 
 <div class="grid-container">
-    <div class="grid-item">yew add image here</div>
-    <div class="grid-item">
+   
+    <div class="grid-item"><h2 id="new-story-h2">Show us what you got.</h2></div>
+    
+        <div class="grid-item">
         
         <form method="post" enctype="multipart/form-data">
 

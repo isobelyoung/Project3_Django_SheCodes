@@ -15,19 +15,23 @@
         {% block stylesheets %}{% endblock %}
     </head>
 
+    <header>
+        <div id="header-text">
+            <a id="header-link" href="{% url 'news:index' %}">
+                <h1>SC Discovery Project</h1>
+            </a>
+        </div>
+        <!-- include nav here -->
+        {% include './nav.html' %}
+    </header>
+
     <body>
-        <header>
-            <div id="header-text">
-                <a id="header-link" href="{% url 'news:index' %}">
-                    <h1>SC Discovery Project</h1>
-                </a>
-            </div>
-            <!-- include nav here -->
-            {% include './nav.html' %}
-        </header>
 
-        <!-- content blocks here -->
-        {% block content %}{% endblock %}
-
+        <div class="my-body">
+    
+            <!-- content blocks here -->
+            {% block content %}{% endblock %}
+        
+        </div>
     </body>
 </html>

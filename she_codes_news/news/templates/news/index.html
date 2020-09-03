@@ -9,12 +9,22 @@
 
 {% block content %}
 
-    <h2>Latest News</h2>
-    
-    {% if request.user.is_authenticated %}
-        <a href="{% url 'news:newStory' %}">Write New Story</a>
-    {% endif %}
+    <div class="centred">   
+        <p>The SC Discovery Project is an open source site where artists can submit their pieces and find a community amongst likeminded
+            people. We have a pipeline dream to turn this space into one where you can connect with others and comment directly, but at the moment
+            The SC Discovery Project is a little corner of the internet where you can browse incredible artworks from up-and-coming artists.
+        </p>
+        
+        {% if request.user.is_authenticated %}
+            <p>Got a piece of art you'd like to share?</p>
+            <a href="{% url 'news:newStory' %}"><button class="my-button">Submit here!</button></a>
+        {% endif %}
 
+        
+
+    </div>
+
+    <h2>Latest Submissions</h2>
 
     <div id="latest-stories">
         {% if latest_stories %}
@@ -26,12 +36,18 @@
         {% endif %}
     </div>
 
-    <h4>Browse submissions by category!</h4>
+    <div class="centred" id="browse-categories">
 
-    <a href="{% url 'news:category' %}">All Categories</a>
-    <a href="{% url 'news:digital' %}">Digital</a>
-    <a href="{% url 'news:photography' %}">Photography</a>
-    <a href="{% url 'news:painting' %}">Painting</a>
+        <h6>Browse submissions by category!</h6>
+
+        <a href="{% url 'news:category' %}"><button class="my-button">All Categories</button></a>
+        <a href="{% url 'news:digital' %}"><button class="my-button">Digital</button></a>
+        <a href="{% url 'news:photography' %}"><button class="my-button">Photography</button></a>
+        <a href="{% url 'news:painting' %}"><button class="my-button">Painting</button></a>
+    
+    </div>
+
+    <h2>All submissions</h2>
 
     <div id="all-stories">
         {% if latest_stories %}

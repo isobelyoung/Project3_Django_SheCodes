@@ -9,7 +9,7 @@
 
 <div id="story-wrapper">
     <h2>{{ story.title }}</h2>
-    <h4>{{ story.author }}</h4>
+    <h4>Artist: {{ story.author }}</h4>
     <div id="story-content">
         <!-- add conditional statement to use the defined story image, the placeholder image from database, or the default if no conditions matched -->
         {% if story.story_img %}

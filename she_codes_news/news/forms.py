@@ -13,11 +13,11 @@ class StoryForm(ModelForm):
         model = NewsStory
         fields = ['title', 'pub_date', 'content', 'story_img', 'category']
         labels = {
-            'title': 'Review Heading',
-            'pub_date': 'Publication Date',
-            'content': 'Your Review',
-            'story_img': 'Upload a photo!',
-            'category': 'Restaurant/cafe name'
+            'title': 'Artwork Title',
+            'pub_date': 'Upload Date',
+            'content': 'Comments and Description',
+            'story_img': 'Upload your piece!',
+            'category': 'Category'
         }
         widgets = {
             'pub_date': forms.DateInput(format=('%m/%d/%Y'),

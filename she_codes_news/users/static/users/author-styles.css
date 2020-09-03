@@ -10,7 +10,34 @@ form {
 img {
     margin: 5% 0;
     width: 100%;
-    background-attachment: fixed;
+
+}
+
+h2 {
+    font-family: 'ITC Grouch', serif;
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #373737;
+}
+
+h5 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+
+.my-button {
+    border: 2px solid #ffcfc8;
+    background-color: #ffcfc8; 
+    box-shadow: 5px 5px #f15129;
+    padding: 0.5em;
+    font-family: 'Raleway', Helvetica, sans-serif;
+    margin: 1em;
+    color: #f15129;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 .header-img {
@@ -29,22 +56,64 @@ html {
     background-position: center;
 }
 
-div {
+/* div {
     display: flex;
-}
+} */
 
 .grid-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+    color: #373737;
+}
 
+.grid-container div {
+    font-family: Raleway, sans-serif;
 }
 
 .grid-item {
     flex-grow: 1;
-    align-self: center;
-    width: 48%;
+    width: 60%;
     min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-items: space-between;
+    justify-content: space-around;
 }
 
+.grid-item p {
+    margin-left: 10px;
+}
+
+.grid-item-2 {
+    flex-grow: 1;
+    flex-basis: 25%;
+    align-self: center;
+}
+
+.button-box {
+    display: block;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.centred-text {
+    text-align: center;
+}
+
+@media only screen and (max-width: 550px) {
+    .grid-item { 
+        text-align: center;
+    }
+
+    img {
+        max-width: 250px;
+    }
+
+    .grid-item-2 {
+        justify-content: center;
+        text-align: center;
+    }
+
+}

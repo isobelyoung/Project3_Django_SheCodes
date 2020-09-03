@@ -13,25 +13,40 @@
 <h2>Your Account</h2>
 
 {% if request.user.is_authenticated %}
+<div class="grid-container">
+    <div class="grid-item">
+        <div>
 
-<p>Hi, {{ user.username }}!</p>
+            <h5>Hi, {{ user.first_name }}!</h5>
 
+            <p>We're so glad you're here. Your details are: </p>
 
-<p>We're so glad you decided to be a part of our project!</p>
+            <p><b>ID:</b> {{ request.user.id }}</p>
+            <p><b>Username:</b> {{ request.user.username }}</p>
+            <p><b>Email:</b> {{ request.user.email }}</p>
 
-{% if user.profile_img %}
-<img src="/news/media/{{  user.profile_img  }}"">
-{% else %}
-    <img src="{% static 'users/images/profile_default.gif' %}">
-{% endif %} 
+        </div>
 
-<p>And the boring (but necessary!) stuff:</p>
-<a href="{% url 'password_change' %}">Reset your password</a>
-<a href="/users/{{ request.user.id }}/change-account/">Edit your username or email</a>
+        <div class="button-box">
+            <a href="{% url 'password_change' %}"><button class="my-button">Reset your password</button></a>
+            <a href="/users/{{ request.user.id }}/change-account/"><button class="my-button">Edit your username or email</button></a>
+        </div>
+    </div>
+    <div class="grid-item-2">
+        {% if user.profile_img %}
+        <img src="/news/media/{{  user.profile_img  }}"">
+        {% else %}
+            <img src="{% static 'users/images/profile_default.gif' %}">
+        {% endif %} 
+    </div>
+</div>
 
 
 {% include './authorStories.html' %}
 
+
+{% else %}
+    <p>Whoops, looks like you don't have an account yet. Create one <a href="/users/create-account">here...</a></p>
 {% endif %}
 
 {% endblock %}

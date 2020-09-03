@@ -14,36 +14,38 @@
 {% if all_categories %}
 
 
-    <h4>Digital</h4>
+    <h5>Digital</h5>
     {% if Digital %}
     {% for story in Digital_sneak_peek %}
         {% include "./storyCard.html" with story=story position=forloop.counter %}
     {% endfor %}
-    <a href="{% url 'news:digital' %}">View All Digital Submissions</a>
     {% else %}
         <p>No stories for this category!</p>
     {% endif %}
+    <a href="{% url 'news:digital' %}">View All Digital Submissions</a>
 
-    <h4>Photography</h4>
+    <h5>Photography</h5>
     {% if Photography %}
     {% for story in Photography_sneak_peek %}
         {% include "./storyCard.html" with story=story position=forloop.counter %}
     {% endfor %}
-    <a href="{% url 'news:photography' %}">View all Photography Submissions</a>
+    
     {% else %}
         <p>No stories for this category!</p>
     {% endif %}
+    <a href="{% url 'news:photography' %}">View all Photography Submissions</a>
 
 
-    <h4>Painting</h4>
+    <h5>Painting</h5>
     {% if Painting %}
     {% for story in Painting_sneak_peek %}
         {% include "./storyCard.html" with story=story position=forloop.counter %}
     {% endfor %}
-    <a href="{% url 'news:painting' %}">View all Painting Submissions</a>
+    
     {% else %}
         <p>No stories for this category!</p>
     {% endif %}
+    <a href="{% url 'news:painting' %}">View all Painting Submissions</a>
         
     
 

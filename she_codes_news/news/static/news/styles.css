@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url("//db.onlinewebfonts.com/c/537c29c4b78689a51f1c48cd802a503f?family=ITC+Grouch");
+
 .story-card {
     margin: 2px;
-    border: 1px solid #000;
+    border: 1px solid #373737;
     padding: 5px;
+    font-family: 'Raleway', Helvetica, sans-serif;
 }
 
 .story-card img {
@@ -92,4 +96,42 @@
     float: right;
     margin: 0 0 10px 10px;
     width: 50%;
+}
+
+.centred {
+    text-align: center;
+    margin: 0 10vw;
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+h6 {
+    font-size: 25px;
+    color: white;
+    margin: 0.5em 0;
+    text-shadow: 1px 1px #FF6F61;
+}
+
+h5 {
+    font-size: 25px;
+    color: #FF6F61;
+    margin: 0.5em 0;
+    text-transform: uppercase;
+    font-family: "ITC Grouch", serif;
+}
+
+#browse-categories {
+    padding: 15px;
+    margin: 10px;
+    background-attachment: fixed;
+    background-image: url('https://media1.tenor.com/images/8a01b421aba8d865aa0fd2c673947839/tenor.gif?itemid=13300808');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+p {
+    font-family: 'Raleway', Helvetica, sans-serif;
 }

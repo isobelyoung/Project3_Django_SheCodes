@@ -1,11 +1,23 @@
 {% extends 'base.html' %}
-{% block content %}
-<h2>Update Account</h2>
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Update Account</button>
+{% load static %}
+
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'users/account-styles.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="grid-container">
+    <div class="grid-item"><img src="https://www.indiewire.com/wp-content/uploads/2013/06/ferris-buellers-day-off.jpg?w=780"></div>
+    <div class="grid-item">
+        <h2>Update Account</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Update Account</button>
+    </div>
 </form>
+</div>
 
 {% endblock %}
