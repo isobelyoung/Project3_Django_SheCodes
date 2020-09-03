@@ -28,16 +28,17 @@
         </div>
 
         <div class="button-box">
-            <a href="{% url 'password_change' %}"><button class="my-button">Reset your password</button></a>
+            <a href="{% url 'password_change' %}"><button class="my-button">Change your password</button></a>
             <a href="/users/{{ request.user.id }}/change-account/"><button class="my-button">Edit your username or email</button></a>
         </div>
     </div>
     <div class="grid-item-2">
-        {% if user.profile_img %}
+        <!-- {% if user.profile_img %} -->
         <img src="/news/media/{{  user.profile_img  }}"">
         {% else %}
             <img src="{% static 'users/images/profile_default.gif' %}">
-        {% endif %} 
+            <!-- <img src="../users/images/profile_default.gif"> -->
+        {% endif %}  
     </div>
 </div>
 
