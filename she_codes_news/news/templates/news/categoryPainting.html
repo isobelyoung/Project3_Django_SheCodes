@@ -8,10 +8,9 @@
 
 {% block content %}
 
-
-<div>
-
-    <h4>Paintings</h4>
+<h5>Paintings</h5>
+<div id="all-stories">
+    
     {% if Painting %}
     {% for story in Painting %}
         {% include "./storyCard.html" with story=story position=forloop.counter %}

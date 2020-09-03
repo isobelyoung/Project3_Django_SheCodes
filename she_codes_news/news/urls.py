@@ -15,7 +15,7 @@ urlpatterns = [
     path('category/', CategoryView.as_view(), name='category'),
     path('category/digital/', DigitalView.as_view(), name='digital'),
     path('category/painting/',PaintingView.as_view(), name='painting'),
-    path('category/photography/',PaintingView.as_view(), name='photography'),
+    path('category/photography/',PhotographyView.as_view(), name='photography'),
 ] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
 
 if settings.DEBUG:

@@ -8,14 +8,14 @@
 
 {% block content %}
 
+<h5>Digital</h5>
+<div id="all-stories">
 
-<div>
-
-    <h4>Digital</h4>
+    
     {% if Digital %}
-    {% for story in Digital %}
-        {% include "./storyCard.html" with story=story position=forloop.counter %}
-    {% endfor %}
+        {% for story in Digital %}
+            {% include "./storyCard.html" with story=story position=forloop.counter %}
+        {% endfor %}
     {% else %}
         <p>No stories for this category!</p>
     {% endif %}

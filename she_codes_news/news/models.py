@@ -18,7 +18,7 @@ class NewsStory(models.Model):
     pub_date = models.DateTimeField()
     content = models.TextField()
     story_img = models.ImageField(upload_to='images/', null=True, blank=True, default='/media/images/default_story.jpg') # add default image!
-    category = models.CharField(max_length=200, default="All cafes")
+    category = models.CharField(max_length=200, default="Digital")
 
 
     # objects = PostManager()
