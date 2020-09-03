@@ -1,0 +1,25 @@
+{% extends "base.html" %}    
+{% load static %}
+
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
+{% endblock %} 
+
+{% block content %}
+
+
+<div>
+
+    <h4>Paintings</h4>
+    {% if Painting %}
+    {% for story in Painting %}
+        {% include "./storyCard.html" with story=story position=forloop.counter %}
+    {% endfor %}
+    {% else %}
+        <p>No stories for this category!</p>
+    {% endif %}
+
+</div>
+
+{% endblock %}

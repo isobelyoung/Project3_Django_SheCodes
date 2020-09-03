@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url("//db.onlinewebfonts.com/c/537c29c4b78689a51f1c48cd802a503f?family=ITC+Grouch");
 
 body {
     background-color: rgb(240, 239, 239);
@@ -16,14 +18,14 @@ header {
 /* } */ */
 
 h1 {
-    font-family: 'Montserrat Subrayada', sans-serif;
+    font-family: "ITC Grouch", serif;
     text-decoration: none;
     font-size: 4rem;
     margin: 0;
 }
 
 h2 {
-   font-family: 'Montserrat Subrayada', sans-serif; 
+   font-family: "ITC Grouch", serif;
 }
 
 h3 {
@@ -50,5 +52,5 @@ a {
 }
 
 a, p {
-    font-family: monospace;
+    font-family: 'Raleway', sans-serif;
 }

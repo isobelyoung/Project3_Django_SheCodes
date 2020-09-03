@@ -58,5 +58,72 @@ class CategoryView(generic.ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['all_categories'] = NewsStory.objects.all().order_by('-pub_date')
-        # context['category_1'] = NewsStory.objects.all().filter('category')
+        
+        context['Digital'] = NewsStory.objects.order_by('-pub_date').filter(category__contains='Digital')
+        context['Digital_sneak_peek'] = NewsStory.objects.order_by('-pub_date').filter(category__contains='Digital')[:4]
+        context['Photography'] = NewsStory.objects.order_by('-pub_date').filter(category__contains='Photography')
+        context['Photography_sneak_peek'] = NewsStory.objects.order_by('-pub_date').filter(category__contains='Photography')[:4]
+        context['Painting'] = NewsStory.objects.order_by('-pub_date').filter(category__contains='Painting')
+        context['Painting_sneak_peek'] = NewsStory.objects.order_by('-pub_date').filter(category__contains='Painting')[:4]
+        
+        return context
+
+class DigitalView(generic.ListView):
+    template_name="news/categoryDigital.html"
+    model = NewsStory
+    context_object_name = "story"
+
+    def __init__(self):
+        self.category = NewsStory.category
+
+    def get_queryset(self):
+        return NewsStory.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['all_categories'] = NewsStory.objects.all().order_by('-pub_date')
+        
+        context['Digital'] = NewsStory.objects.order_by('-pub_date').filter(category__contains='Digital')
+        context['Digital_sneak_peek'] = NewsStory.objects.order_by('-pub_date').filter(category__contains='Digital')[:4]
+        
+        return context
+
+class PhotographyView(generic.ListView):
+    template_name="news/categoryPhotography.html"
+    model = NewsStory
+    context_object_name = "story"
+
+    def __init__(self):
+        self.category = NewsStory.category
+
+    def get_queryset(self):
+        return NewsStory.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['all_categories'] = NewsStory.objects.all().order_by('-pub_date')
+        
+        context['Photography'] = NewsStory.objects.order_by('-pub_date').filter(category__contains='Photography')
+        context['Photography_sneak_peek'] = NewsStory.objects.order_by('-pub_date').filter(category__contains='Photography')[:4]
+        
+        return context
+
+class PaintingView(generic.ListView):
+    template_name="news/categoryPainting.html"
+    model = NewsStory
+    context_object_name = "story"
+
+    def __init__(self):
+        self.category = NewsStory.category
+
+    def get_queryset(self):
+        return NewsStory.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['all_categories'] = NewsStory.objects.all().order_by('-pub_date')
+        
+        context['Painting'] = NewsStory.objects.order_by('-pub_date').filter(category__contains='Painting')
+        context['Painting_sneak_peek'] = NewsStory.objects.order_by('-pub_date').filter(category__contains='Painting')[:4]
+        
         return context

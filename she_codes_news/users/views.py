@@ -29,3 +29,7 @@ class AuthorView(generic.DetailView):
     template_name="users/authorStories.html"
     model = CustomUser
     context_object_name = "author"
+
+class ChangePassword(UpdateView):
+    form_class = PasswordChangeForm
+    template_name = 'users/password_change_form.html'

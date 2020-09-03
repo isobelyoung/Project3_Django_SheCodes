@@ -1,5 +1,13 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+<!-- everything from h2 tag goes in content block in base template -->
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'users/author-styles.css' %}">
+{% endblock %}
+
 {% block content %}
 
 <h2>Your Account</h2>
@@ -8,7 +16,19 @@
 
 <p>Hi, {{ user.username }}!</p>
 
+
+<p>We're so glad you decided to be a part of our project!</p>
+
+{% if user.profile_img %}
+<img src="/news/media/{{  user.profile_img  }}"">
+{% else %}
+    <img src="{% static 'users/images/profile_default.gif' %}">
+{% endif %} 
+
+<p>And the boring (but necessary!) stuff:</p>
 <a href="{% url 'password_change' %}">Reset your password</a>
+<a href="/users/{{ request.user.id }}/change-account/">Edit your username or email</a>
+
 
 {% include './authorStories.html' %}
 

@@ -4,7 +4,7 @@
 
 {% block stylesheets %}
 <link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
-{% endblock %} # replaces block stylesheets in base.html
+{% endblock %} 
 
 {% block content %}
 
@@ -13,21 +13,37 @@
 
 {% if all_categories %}
 
-    <h4>New cafes</h4>
-    {% for story in all_categories %}
-    {% if story.category == "New cafe" %}
-        {% include "./storyCard.html" with story=story position=forloop.counter %}
-    {% endif %}
-    {% endfor %}
 
-    
-    
-    <h4>All cafes</h4>
-    {% for story in all_categories %}
-    {% if story.category == "All cafes" %}
+    <h4>Digital</h4>
+    {% if Digital %}
+    {% for story in Digital_sneak_peek %}
         {% include "./storyCard.html" with story=story position=forloop.counter %}
-    {% endif %}
     {% endfor %}
+    <a href="{% url 'news:digital' %}">View All Digital Submissions</a>
+    {% else %}
+        <p>No stories for this category!</p>
+    {% endif %}
+
+    <h4>Photography</h4>
+    {% if Photography %}
+    {% for story in Photography_sneak_peek %}
+        {% include "./storyCard.html" with story=story position=forloop.counter %}
+    {% endfor %}
+    <a href="{% url 'news:photography' %}">View all Photography Submissions</a>
+    {% else %}
+        <p>No stories for this category!</p>
+    {% endif %}
+
+
+    <h4>Painting</h4>
+    {% if Painting %}
+    {% for story in Painting_sneak_peek %}
+        {% include "./storyCard.html" with story=story position=forloop.counter %}
+    {% endfor %}
+    <a href="{% url 'news:painting' %}">View all Painting Submissions</a>
+    {% else %}
+        <p>No stories for this category!</p>
+    {% endif %}
         
     
 

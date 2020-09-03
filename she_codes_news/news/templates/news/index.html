@@ -26,6 +26,13 @@
         {% endif %}
     </div>
 
+    <h4>Browse submissions by category!</h4>
+
+    <a href="{% url 'news:category' %}">All Categories</a>
+    <a href="{% url 'news:digital' %}">Digital</a>
+    <a href="{% url 'news:photography' %}">Photography</a>
+    <a href="{% url 'news:painting' %}">Painting</a>
+
     <div id="all-stories">
         {% if latest_stories %}
             {% for story in all_stories %}
